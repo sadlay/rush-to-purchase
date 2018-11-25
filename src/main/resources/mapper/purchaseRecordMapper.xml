@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lay.rushtopurchase.dao.PurchaseRecordDao">
+    <!-- 新增购买信息-->
+    <insert id="insertPurchaseRecord" parameterType="purchaseRecord">
+        insert into t_purchase_record(
+        user_id,product_id,price,quantity,sum,purchase_date,note
+        )values (
+        #{userId},#{productId},#{price},#{quantity},#{sum},now(),#{note}
+        )
+    </insert>
+</mapper>

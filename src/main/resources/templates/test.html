@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>获取请求头参数</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.js"></script>
+    <script type="text/javascript">
+        for (var i=1;i<=15000;i++) {
+            var params = {
+                userId: 1,
+                productId: 1,
+                quantity: 1
+            };
+            //通过post请求后端
+            $.post("./purchase", params, function (result) {
+                //alert(result.message);
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>抢购产品测试</h1>
+</body>
+</html>
