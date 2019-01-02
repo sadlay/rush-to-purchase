@@ -2,6 +2,7 @@ package com.lay.rushtopurchase.config;
 
 import com.lay.rushtopurchase.utils.FastJsonRedisSerializer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
@@ -14,7 +15,7 @@ import javax.annotation.PostConstruct;
  * @Date: Created in 19:56 2018/11/25
  * @Modified By:IntelliJ IDEA
  */
-@Configuration
+//@Configuration
 public class RedisConfig {
     // redisTemplate
     @Autowired
@@ -25,6 +26,7 @@ public class RedisConfig {
         initRedisTemplate();
     }
 
+    @Bean
     public RedisTemplate initRedisTemplate() {
         RedisSerializer stringSerializer = redisTemplate.getStringSerializer();
         FastJsonRedisSerializer jacksonSeial=new FastJsonRedisSerializer<>(Object.class);
